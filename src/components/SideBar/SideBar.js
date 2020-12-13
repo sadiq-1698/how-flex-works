@@ -1,16 +1,17 @@
 import { SideBarContainer } from './SideBar.styles';
-import FilterChips  from '../FilterChips/FilterChips';
+import FilterChipsSectionContainer  from '../FilterChipsSection/FilterChipsSection';
 
 const SideBar = () => {
 
+    const flexDirection = ["row", "column"];
+    const justifyContent = ["center", "flex-start", "flex-end", "space-between", "space-evenly", "space-around"];
+    const alignItems = ["center", "flex-start", "flex-end", "space-between", "space-evenly", "space-around"];
+
     return (
         <SideBarContainer>
-            <FilterChips value="flex-start"/>
-            <FilterChips value="flex-end"/>
-            <FilterChips value="space-between"/>
-            <FilterChips value="space-around"/>
-            <FilterChips value="space-evenly"/>
-            <FilterChips value="center"/>
+            <FilterChipsSectionContainer items={flexDirection} itemHeader="Flex direction"/>
+            <FilterChipsSectionContainer items={justifyContent} itemHeader="Justify content"/>
+            <FilterChipsSectionContainer items={alignItems} itemHeader="Align items"/>
         </SideBarContainer>
     )
 }
